@@ -1,8 +1,10 @@
-# vue-project
+# 1. vue-project
+[TOC] 
+
 
 > A Vue.js project
 
-## Build Setup
+## 1.1. Build Setup
 
 ``` bash
 # install dependencies

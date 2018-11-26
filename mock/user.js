@@ -1,5 +1,5 @@
 module.exports = {
-  'GET /api/user': {
+  'GET /horizon/dawn/api/yt/user': {
     'code': 200,
     'msg': '',
     'data': {

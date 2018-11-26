@@ -1,13 +1,15 @@
 
-// mock数据
+// mock数据 start
 const express = require('express')
 const app = express()
 var router = express.Router()
+// 通过路由请求本地数据
+app.use('/api', router)
 var mock = require('../mockapply')
 var debug = require('debug')('mock');
 var Mock = require('mockjs')
-// 通过路由请求本地数据
-app.use('/api', router)
+// mock end
+
 
 const utils = require('./utils')
 const webpack = require('webpack')
@@ -51,9 +53,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     watchOptions: {
       poll: config.dev.poll,
     },
-
-
-// 添加before方法
+// 添加before方法 本地服务接口
 before(app) {
   Object.keys(mock).forEach(key => {
     debug(key)
