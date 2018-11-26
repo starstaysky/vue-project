@@ -1,6 +1,6 @@
 # 1. vue-project
-[TOC] 
 
+<!-- TOC -->autoauto- [1. vue-project](#1-vue-project)auto  - [1.1. Build Setup](#11-build-setup)autoauto<!-- /TOC -->
 
 > A Vue.js project
 
