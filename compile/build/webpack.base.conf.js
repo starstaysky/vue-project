@@ -4,10 +4,11 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
-function resolve (dir) {
-  return path.join(__dirname, '..', dir)
+function resolve(dir) {
+  return path.join(__dirname, '../../', dir)
 }
-
+console.log(resolve('src'))
+console.log('eslinttttttttttttttttt')
 const createLintingRule = () => ({
   test: /\.(js|vue)$/,
   loader: 'eslint-loader',
@@ -20,9 +21,9 @@ const createLintingRule = () => ({
 })
 
 module.exports = {
-  context: path.resolve(__dirname, '../'),
+  context: path.resolve(__dirname, '../../'),
   entry: {
-    app: './src/main.js'
+    app: path.resolve(__dirname, '../../src/main.js')
   },
   output: {
     path: config.build.assetsRoot,
@@ -35,7 +36,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
+      '@': resolve('src')
     }
   },
   module: {
@@ -78,9 +79,11 @@ module.exports = {
     ]
   },
   node: {
+
     // prevent webpack from injecting useless setImmediate polyfill because Vue
     // source contains it (although only uses it if it's native).
     setImmediate: false,
+
     // prevent webpack from injecting mocks to Node native modules
     // that does not make sense for the client
     dgram: 'empty',
