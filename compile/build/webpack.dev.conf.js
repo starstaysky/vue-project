@@ -57,6 +57,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 
 // 添加before方法 本地服务接口
 before(app) {
+  if (!config.dev.enableMock) {
+      return
+  }
   Object.keys(mock).forEach(key => {
     debug(key)
      let keyParsed = key.split(' ')
